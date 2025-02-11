@@ -66,7 +66,7 @@
     let dados = [];
 
     function carregarDados() {
-      Papa.parse('dados.csv', {
+      Papa.parse('dados-imperatriz.csv', {
         download: true,
         header: true,
         complete: function(results) {
@@ -133,7 +133,7 @@
 
         const detalhesDiv = document.createElement('div');
         detalhesDiv.className = "descricaoDiv";
-        detalhesDiv.innerHTML = `Disciplina: ${item.disciplina} <br> Sala: ${item.sala}`;
+        detalhesDiv.innerHTML = `Disciplina: ${item.disciplina} <br> Periodo: ${item.periodo} <br> Bloco: ${item.bloco} <br> Sala: ${item.sala}`;
         
         li.appendChild(professorDiv);
         li.appendChild(detalhesDiv);
