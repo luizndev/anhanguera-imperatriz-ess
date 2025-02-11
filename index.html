@@ -18,13 +18,14 @@
   </header>
   <section class="sectionCenter">
     <h1>QUADRO DE HORÁRIOS</h1>
-    <h2>FACULDADE ANHANGUERA</h2>
+    <h2>FACULDADE ANHANGUERA IMPERATRIZ - MA</h2>
   </section>
   <div class="container">
     <div class="section" id="periodo-section">
       <h2>Selecione um turno:</h2>
       <div class="displayButtons">
         <button class="btn" onclick="selecionarPeriodo('Matutino')">Matutino</button>
+        <button class="btn" onclick="selecionarPeriodo('Vespertino')">Vespertino</button>
         <button class="btn" onclick="selecionarPeriodo('Noturno')">Noturno</button>
         <button class="btn" onclick="selecionarPeriodo('Noturno - EAD')">Noturno - EAD</button>
       </div>
@@ -66,7 +67,7 @@
     let dados = [];
 
     function carregarDados() {
-      Papa.parse('dados-imperatriz.csv', {
+      Papa.parse('dados.csv', {
         download: true,
         header: true,
         complete: function(results) {
@@ -97,7 +98,7 @@
     }
 
     function mostrarCursos() {
-      const cursosFiltrados = dados.filter(d => d.curso === periodoSelecionado && d.dia === diaSelecionado);
+      const cursosFiltrados = dados.filter(d => d.turno === periodoSelecionado && d.dia === diaSelecionado);
 
       const lista = document.getElementById('lista-opcoes');
       lista.innerHTML = '';
@@ -117,7 +118,7 @@
     function mostrarProfessores(curso) {
       const professoresFiltrados = dados.filter(item => 
         item.faculdade === curso && 
-        item.curso === periodoSelecionado && 
+        item.turno === periodoSelecionado && 
         item.dia === diaSelecionado
       );
 
@@ -133,7 +134,7 @@
 
         const detalhesDiv = document.createElement('div');
         detalhesDiv.className = "descricaoDiv";
-        detalhesDiv.innerHTML = `Disciplina: ${item.disciplina} <br> Periodo: ${item.periodo} <br> Bloco: ${item.bloco} <br> Sala: ${item.sala}`;
+        detalhesDiv.innerHTML = `Disciplina: ${item.disciplina}<br> Periodo; ${item.periodo} <br> Bloco: ${item.bloco} <br> Sala: ${item.sala}`;
         
         li.appendChild(professorDiv);
         li.appendChild(detalhesDiv);
