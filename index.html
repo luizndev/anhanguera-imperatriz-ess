@@ -20,6 +20,8 @@
     <h1>QUADRO DE HORÁRIOS</h1>
     <h2>FACULDADE ANHANGUERA IMPERATRIZ - MA</h2>
   </section>
+  <!-- LOADING -->
+  <div id="loading" class="loading"><img src="spinner.svg" alt=""><span>Carregando...</span></div>
   <div class="container">
     <div class="section" id="periodo-section">
       <h2>Selecione um turno:</h2>
@@ -67,14 +69,22 @@
   <script>
     let dados = [];
 
-       function carregarDados() {
-      fetch('https://script.googleusercontent.com/macros/echo?user_content_key=rA3ZRBAjpEdD0XErn0cMf7erekd18ioaGda_9QmXu_6iO7cevktx56mD7TCGrvrvsu3Tg6okJ4aheG5PFKScvhImzoqTspXxm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnD0UYoE3yfzYfPDiKj2f6MReh4c2qZTciLWOOCcvRT4SMY-H5gSDUOfN9s3geVor4bhqczrFwRir6rUfJ0UV5NkbQOdQMbWekw&lib=MfEWQq_pJAkp92vS19rPiO52JNqGx101o')
+        function carregarDados() {
+      document.getElementById("loading").classList.remove("hidden"); // Exibe o loading
+
+      fetch('https://script.googleusercontent.com/macros/echo?user_content_key=MuZdrZn_BnzkPkSMfgPUgnAEIMn0ki3d9VfiNieqItNkM-Is85rmaBeGiabNI0VSvVGrSp1CXFN4NvImCey3EVBgOPJh0_rBm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnCtDcrGfNtifN0-uv-et6u5vj9-4qx9vXcAOB2mkajrqMRjMKK68bsLQoIt_bWooaLwSiB3zB22N8qUeG8VAlHVIPxf_EXerSdz9Jw9Md8uu&lib=MCd6G0I70DQDBh0-FnOq14CZMXI6_oa1N')
         .then(response => response.json())
         .then(data => {
           dados = data.data; 
           console.log("Dados carregados:", dados);
+
+          document.getElementById("loading").classList.add("hidden"); // Oculta o loading
+          document.getElementById("conteudo").classList.remove("hidden"); // Exibe o conteúdo
         })
-        .catch(error => console.error("Erro ao carregar os dados:", error));
+        .catch(error => {
+          console.error("Erro ao carregar os dados:", error);
+          document.getElementById("loading").textContent = "Erro ao carregar os dados.";
+        });
     }
 
 
