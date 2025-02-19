@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Encontre sua sala na Faculdade Anhanguera de Imperatriz. Consulte horários, salas e professores.">
+  <meta name="description" content="Encontre sua sala ou aula prática na Faculdade Anhanguera de Imperatriz. Consulte horários, salas e professores.">
   <meta name="keywords" content="Anhanguera, Imperatriz, sala, horários, professores, faculdade">
   <meta name="author" content="Cainã Santos de Amorim - Assistente Administrativo">
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-  <title>Encontre sua Sala - Anhanguera Imperatriz - MA</title>
+  <title>Encontre sua Sala ou Laboratório - Imperatriz - MA</title>
 </head>
 <body>
   <header class="navbar">
@@ -31,6 +31,8 @@
         <button class="btn" onclick="selecionarPeriodo('Noturno')">Noturno</button>
         <button class="btn" onclick="selecionarPeriodo('Matutino - EAD')">Matutino - EAD</button>
         <button class="btn" onclick="selecionarPeriodo('Noturno - EAD')">Noturno - EAD</button>
+        <br>
+        <h2>Mapa de Laboratórios:</h2>
         <button class="btn" onclick="selecionarPeriodo('Laboratório')">Laboratório</button>
       </div>
     </div>
@@ -46,6 +48,7 @@
         <button class="btn" onclick="selecionarDia('Quarta')">Quarta-Feira</button>
         <button class="btn" onclick="selecionarDia('Quinta')">Quinta-Feira</button>
         <button class="btn" onclick="selecionarDia('Sexta')">Sexta-Feira</button>
+        <button class="btn" onclick="selecionarDia('Sábado')">Sábado</button>
       </div>
     </div>
 
@@ -114,7 +117,7 @@
       const lista = document.getElementById('lista-opcoes');
       lista.innerHTML = '';
 
-      const cursos = [...new Set(cursosFiltrados.map(item => item.faculdade))];
+      const cursos = [...new Set(cursosFiltrados.map(item => item.curso))];
 
       cursos.forEach(curso => {
         const li = document.createElement('li');
@@ -128,7 +131,7 @@
 
     function mostrarProfessores(curso) {
       const professoresFiltrados = dados.filter(item => 
-        item.faculdade === curso && 
+        item.curso === curso && 
         item.turno === periodoSelecionado && 
         item.dia === diaSelecionado
       );
@@ -145,7 +148,7 @@
 
         const detalhesDiv = document.createElement('div');
         detalhesDiv.className = "descricaoDiv";
-        detalhesDiv.innerHTML = `Disciplina: ${item.disciplina}<br> Periodo; ${item.periodo} <br> Bloco: ${item.bloco} <br> Sala: ${item.sala}`;
+        detalhesDiv.innerHTML = `Disciplina: ${item.disciplina}<br> Periodo; ${item.periodo} <br> Bloco: ${item.bloco} <br> Sala: ${item.sala} <br> Hora: ${item.hora}`;
         
         li.appendChild(professorDiv);
         li.appendChild(detalhesDiv);
