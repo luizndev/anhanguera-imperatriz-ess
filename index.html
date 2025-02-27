@@ -17,8 +17,8 @@
     <a href="#"><img class="" src="images/logotipo.svg" alt=""></a>
   </header>
   <section class="sectionCenter">
-    <h1>QUADRO DE HORÁRIOS</h1>
-    <h2>FACULDADE ANHANGUERA IMPERATRIZ - MA</h2>
+    <h1>MAPA DE SALAS:</h1>
+    <h2>FACULDADE ANHANGUERA DE IMPERATRIZ - MA</h2>
   </section>
   <!-- LOADING -->
   <div id="loading" class="loading"><img src="spinner.svg" alt=""><span>Carregando...</span></div>
@@ -148,7 +148,7 @@
 
         const detalhesDiv = document.createElement('div');
         detalhesDiv.className = "descricaoDiv";
-        detalhesDiv.innerHTML = `Disciplina: ${item.disciplina}<br> Periodo: ${item.periodo} <br> Bloco: ${item.bloco} <br> Sala: ${item.sala} <br> Hora: ${item.hora}`;
+        detalhesDiv.innerHTML = `Disciplina/Curso: ${item.disciplina}<br> Periodo/Turma: ${item.periodo} <br> Bloco: ${item.bloco} <br> Sala/Laboratório: ${item.sala} <br> Hora: ${item.hora}`;
         
         li.appendChild(professorDiv);
         li.appendChild(detalhesDiv);
