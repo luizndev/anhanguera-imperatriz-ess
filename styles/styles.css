@@ -1,216 +1,297 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
 
-*{
-    font-family: "Rubik", sans-serif;
+* {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #2f3136 !important;
-    margin: 0;
-    padding: 0px;
-  }
-  h1 {
-    text-align: center;
-  }
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  .section {
-    margin-bottom: 20px;
-  }
-  .btn {
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #ff2800;
+    background-color: #2f3136;
     color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  .btn:hover {
-    background-color: #ff260080;
-  }
-  .hidden {
-    display: none !important;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  li {
-    padding: 10px 20px;
-    background-color: #232428;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    position: relative;
-  }
-  .detalhes {
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    color: #ffffff;
-    display: none; 
-  }
-  .back-btn {
-    text-align: end;
-    display: block;
-    margin-top: 20px;
-    background-color: #6c757d00;
-    color: white;
-  }
-  .back-btn:hover {
-    background-color: #5a6268;
-  }
+}
 
-  .rodape{
-    width: 100%;
-    height: 10%;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
+body.light-mode {
+    background-color: #f5f5f5;
+    color: black;
+}
+
+#lista-cursos, #lista-professores {
+    text-transform: uppercase;
+}
+
+/* ================= NAVBAR =================== */
+.navbar {
     display: flex;
     align-items: center;
-    justify-content: center;
-  }
-
-  .rodape img{
-    margin:  0 auto;
-  }
-.navbar{
-    display: flex;
+    justify-content: space-between;
     width: 100%;
     height: 80px;
+    padding: 0 40px;
+    background-color: #2f3136;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.light-mode .navbar {
+    background-color: #e6e6e6;
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.navbar-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
-    border-bottom: 1px solid #ffffff09;
-    box-shadow: 0px 4px 34px #0000;
 }
 
-.spanNav{
+.navbar-right {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
 }
 
-.pImageNav{
-    display: flex;
-    gap: 3px;
+.logotipo {
+    width: 151px;
 }
 
-.spanNav .pImageNav{
+.theme-toggle {
+    background: none;
+    border: none;
     color: white;
-    font-size: 12px;
+    font-size: 24px;
+    cursor: pointer;
 }
 
-.pNav{
-    color: white;
-    font-weight: 600;
-    height: 0px;
-    margin-top: -10px;
+body.light-mode .theme-toggle {
+    color: black;
 }
 
-.sectionCenter{
+.theme-toggle:hover {
+    color: #ff4500;
+}
+
+/* ================= CABEÇALHO ================= */
+.sectionCenter {
     background-image: url('../images/background.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 50%;
+    padding: 20px 0;
     display: flex;
-    padding-top: 20px;
-    padding-bottom: 20px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3px;
 }
 
-
-.sectionCenter h1{
+.sectionCenter h1 {
     color: white;
-    height: 0px;
     font-weight: 700;
 }
 
-.sectionCenter h2{
-    font-size: 18px;
-    font-weight: 300;
+body.light-mode .sectionCenter h1 {
+    color: black;
+}
+
+.sectionCenter h2 {
     color: white;
+    font-weight: 300;
+    font-size: 18px;
 }
 
-.section h2{
-color: white;
-font-weight: 400;
-font-size: 17px;
+body.light-mode .sectionCenter h2 {
+    color: black;
 }
 
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-.displayButtons{
+.section h2 {
+    color: white;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+body.light-mode .section h2 {
+    color: black;
+}
+
+/* ================= BOTÕES ================= */
+.btn {
+    padding: 10px 20px;
+    margin: 5px 0;
+    background-color: #ff2800;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: rgba(255, 38, 0, 0.5);
+}
+
+.displayButtons {
     display: flex;
     flex-direction: column;
 }
 
-.headeDisplay{
-    display: flex;
-    height: 50px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.buttonReturn{
-    background-color: rgba(255, 255, 255, 0);
+.buttonReturn {
+    background: none;
     color: white;
     border: none;
     font-size: 15px;
-    text-align: start;
+    cursor: pointer;
 }
 
-#filtro-input{
-    margin-bottom: 10px !important;
-    background-color: #4d4f537c;
+body.light-mode .buttonReturn {
+    color: black;
+}
+
+.buttonReturn:hover {
+    text-decoration: underline;
+}
+
+/* ================= INPUT FILTRO ================= */
+#filtro-input,
+#filtro-input-laboratorio {
+    margin-bottom: 10px;
+    background-color: rgba(77, 79, 83, 0.5);
     border: none;
-    width: 98%;
-    padding-left: 10px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    width: 100%;
+    padding: 12px 10px;
     border-radius: 3px;
     outline: none;
     color: white;
 }
 
-.logotipo{
-    width: 151px;
+body.light-mode #filtro-input,
+body.light-mode #filtro-input-laboratorio {
+    background-color: #d9d9d9;
+    color: black;
 }
 
+/* ================= LISTAS ================= */
+ul {
+    list-style: none !important;
+    padding: 0;
+    margin: 0;
+}
 
-#lista-opcoes li{
-    margin-bottom: 10px !important;
-    list-style: none;
+li {
+    padding: 10px 20px;
+    background-color: #232428;
+    color: white;
+    border-radius: 5px;
+    cursor: default;
+    margin-bottom: 10px;
+}
+
+li::marker {
+    content: '';
+}
+
+body.light-mode li {
+    background-color: #e0e0e0;
+    color: black;
+}
+
+#lista-opcoes li,
+#lista-opcoes-laboratorio li {
     text-transform: uppercase;
 }
 
-.descricaoDiv{
-  color: rgba(255, 255, 255, 0.548);
-  font-weight: 300;
+.descricaoDiv {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
 }
 
-
-
-#loading{
-  margin-top: 30px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+body.light-mode .descricaoDiv {
+    color: rgba(0, 0, 0, 0.7);
 }
 
-#loading img{
-  width: 50px;
-  margin-bottom: 10px;
+/* ================= LOADING ================= */
+#loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(47, 49, 54, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    flex-direction: column; /* ADICIONADO para empilhar img + texto */
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#loading img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px; /* ADICIONADO para afastar da descrição */
+}
+
+#loading p {
+    color: #fdfdfd; /* Laranja para combinar com o spinner */
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+body.light-mode #loading {
+    background-color: rgba(245, 245, 245, 0.9);
+}
+
+body.light-mode #loading p {
+    color: #ff8c00; /* Laranja escuro no modo claro */
+}
+
+.container, .sectionCenter {
+    display: none;
+}
+
+body.loaded .container,
+body.loaded .sectionCenter {
+    display: block;
+}
+
+@keyframes rotation {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* ================= OUTROS ================= */
+.headeDisplay {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.cancelado,
+.cancelado * {
+    background-color: #ff0909ea !important;
+    color: white !important;
+    font-weight: bold !important;
 }
