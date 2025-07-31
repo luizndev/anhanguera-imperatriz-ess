@@ -157,7 +157,7 @@ async function fetchData() {
         document.getElementById("loading").classList.remove("hidden");
         document.body.classList.remove("loaded");
 
-        const response = await fetch('https://script.google.com/macros/s/AKfycbxrpFXEiWQkj0nPuomlnJ3AtLNqwdsd_E_jlOhhp3ixE9ouBjyHtCi-B_t8gslQevM/exec');
+        const response = await fetch('https://script.google.com/macros/s/AKfycbx1RQRmwIPCCa0hAqn86ssRc-HfCfNuh2tbanpzFCmsmBXIOzSe7gEzS24eZeqRYN_z/exec');
         
         if (!response.ok) {
             throw new Error(`Erro na requisição: ${response.status}`);
@@ -346,7 +346,7 @@ function mostrarLaboratorioPorCurso(curso) {
         laboratorioDiv.textContent = item.professor;
         laboratorioDiv.style.fontWeight = 'bold';
 
-        const dataFormatada = new Date(item.date).toLocaleDateString("pt-BR");
+        const dataFormatada = new Date(item.data).toLocaleDateString("pt-BR");
 
         const detalhesDiv = document.createElement('div');
         detalhesDiv.className = "descricaoDiv";
