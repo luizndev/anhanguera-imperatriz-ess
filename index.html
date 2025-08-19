@@ -93,7 +93,6 @@
     <ul id="lista-professores"></ul>
     </div>
 
-
   <!-- Fim da Seção de Salas -->
 
   <!-- Seção Laboratório -->
@@ -194,7 +193,6 @@ let diaSelecionado = '';
 let diaLaboratorioSelecionado = '';
 let turnoLaboratorioSelecionado = '';
 
-
 function selecionarPeriodo(periodo) {
     periodoSelecionado = periodo;
     document.getElementById('periodo-section').classList.add('hidden');
@@ -225,7 +223,6 @@ function selecionarTurno(turno_lab) {
     document.getElementById('opcao-section-laboratorio').classList.remove('hidden');
     mostrarCursosLaboratorio();
 }
-
 
 // =================== Exibição Cursos ===================
 
@@ -351,7 +348,7 @@ function mostrarLaboratorioPorCurso(curso) {
         const detalhesDiv = document.createElement('div');
         detalhesDiv.className = "descricaoDiv";
         detalhesDiv.innerHTML = `Disciplina: ${item.disciplina} <br>
-                                Laboratório: ${item.laboratorio} <br>
+                                Localização: ${item.laboratorio} <br>
                                 Bloco: ${item.bloco} <br>
                                 Período: ${item.periodo} <br>
                                 Data: ${dataFormatada} <br>
@@ -472,4 +469,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
 
