@@ -79,7 +79,7 @@
         <h2>Localize sua sala, por curso:</h2>
         <button class="buttonReturn" onclick="voltar('dia')">Voltar</button>
     </div>
-    <input type="text" id="filtro-input" placeholder="Filtre aqui por Professor(a)/Disciplina" oninput="filtrarLista()">
+    <input type="text" id="filtro-input-curso" placeholder="Filtre aqui por Professor(a)/Disciplina" oninput="filtrarLista()">
     <div id="lista-cursos"></div>
     </div>
 
@@ -89,7 +89,7 @@
         <h2 id="lista-titulo">Localize sua sala, por curso:</h2>
         <button class="buttonReturn" onclick="voltar('opcao')">Voltar</button>
     </div>
-    <input type="text" id="filtro-input" placeholder="Filtre aqui por Professor(a)/Disciplina" oninput="filtrarLista()">
+    <input type="text" id="filtro-input-professores" placeholder="Filtre aqui por Professor(a)/Disciplina" oninput="filtrarLista()">
     <ul id="lista-professores"></ul>
     </div>
 
@@ -406,7 +406,18 @@ function voltar(passo) {
 // =================== Filtros ===================
 
 function filtrarLista() {
-    const filtro = document.getElementById('filtro-input').value.toLowerCase();
+    const filtro = document.getElementById('filtro-input-professores').value.toLowerCase();
+    const lista = document.getElementById('lista-professores');
+    const itens = lista.getElementsByTagName('li');
+
+    for (let i = 0; i < itens.length; i++) {
+        const itemTexto = itens[i].textContent || itens[i].innerText;
+        itens[i].style.display = itemTexto.toLowerCase().includes(filtro) ? '' : 'none';
+    }
+}
+
+function filtrarCurso() {
+    const filtro = document.getElementById('filtro-input-curso').value.toLowerCase();
     const lista = document.getElementById('lista-professores');
     const itens = lista.getElementsByTagName('li');
 
