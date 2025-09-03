@@ -159,7 +159,8 @@ body.light-mode .buttonReturn {
 }
 
 /* ================= INPUT FILTRO ================= */
-#filtro-input,
+#filtro-input-cursos,
+#filtro-input-professores,
 #filtro-input-laboratorio {
     margin-bottom: 10px;
     background-color: rgba(77, 79, 83, 0.5);
