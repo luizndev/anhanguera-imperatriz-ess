@@ -159,7 +159,7 @@ body.light-mode .buttonReturn {
 }
 
 /* ================= INPUT FILTRO ================= */
-#filtro-input-cursos,
+#filtro-input-curso,
 #filtro-input-professores,
 #filtro-input-laboratorio {
     margin-bottom: 10px;
@@ -296,3 +296,4 @@ body.loaded .sectionCenter {
     color: white !important;
     font-weight: bold !important;
 }
+
